@@ -35,19 +35,64 @@ body {
   background: var(--light-grayish-violet-color);
 }
 
+main {
+  display: flex;
+}
+
 .split {
   width: 50%;
+  position: relative;
+}
+
+.right-bg {
+  top: 14%;
+  position: absolute;
+  height: 100%;
+  right: -150px;
+  bottom: 0;
+  z-index: 0;
+  width: 60%;
+  background: var(--pale-violet-color);
+  border-top-left-radius: 200px;
+  border-top-right-radius: 200px;
+}
+
+.left-bg {
+  position: absolute;
+  height: 100%;
+  left: -120px;
+  top: 0;
+  z-index: 0;
+  width: 70%;
+  background: linear-gradient(
+    to bottom,
+    var(--light-magenta-color),
+    var(--light-violet-color)
+  );
+  border-bottom-left-radius: 48%;
+  border-bottom-right-radius: 48%;
+}
+
+.center-align {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px 200px 10px 20px;
 }
 
 .mobile-dimension {
-  margin: 10px 100px;
-  width: 300px;
-  height: 600px;
+  margin-left: 40%;
+  margin-top: 14%;
+  width: 310px;
+  height: calc(100% - 13%);
   background: var(--light-grayish-violet-color);
-  border: 8px solid var(--white-color);
+  border: 10px solid var(--white-color);
   border-radius: 22px;
   position: relative;
-  box-shadow: 10px 10px 50px 8px var(--grayish-blue-color);
+  -moz-box-shadow: 10px 10px 35px var(--grayish-blue-color);
+  -webkit-box-shadow: 10px 10px 35px var(--grayish-blue-color);
+  box-shadow: 10px 10px 35px var(--grayish-blue-color);
 }
 
 .chat-header {
@@ -132,6 +177,7 @@ body {
 
 .chat-content {
   padding: 10px;
+  height: calc(100% - 66px);
 }
 
 .chat-bubble {
@@ -180,6 +226,10 @@ body {
   margin-right: 5px;
 }
 
+.margin-top-10 {
+  margin-top: 10px;
+}
+
 .radio-btn-bubble {
   border-radius: 12px 12px 12px 5px;
   background: linear-gradient(
@@ -187,23 +237,45 @@ body {
     var(--light-magenta-color),
     var(--light-violet-color)
   );
-  padding: 6px;
-  margin-top: 10px;
-  display: inline-block;
-  /* max-width: 70%; */
-  /* float: left; */
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  float: left;
+}
+
+.radio-btn-bubble div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .radio-btn-bubble span {
   font-size: 12px;
   color: var(--white-color);
   font-weight: 400;
+  margin-left: 10px;
+}
+
+.radio-btn-bubble strong {
+  font-size: 12px;
+  color: var(--white-color);
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.circle {
+  border: 1px solid var(--very-light-magenta-color);
+  display: inline-block;
+  padding: 6px;
+  border-radius: 50%;
 }
 
 .message-input {
   height: 40px;
   background: var(--white-color);
-  margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -212,6 +284,7 @@ body {
   border-radius: 20px;
   color: var(--grayish-blue-color);
   font-size: 14px;
+  width: 100%;
 }
 
 .send-btn {
@@ -226,5 +299,15 @@ body {
 }
 
 h1 {
+  font-size: 2.18rem;
+  font-weight: 500;
+  padding-bottom: 30px;
   color: var(--very-dark-desaturated-violet-color);
+  z-index: 1;
+}
+
+p {
+  line-height: 1.6rem;
+  color: var(--dark-grayish-color);
+  z-index: 1;
 }
