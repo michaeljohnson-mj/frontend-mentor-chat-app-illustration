@@ -37,6 +37,9 @@ body {
 
 main {
   display: flex;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 100px;
 }
 
 .split {
@@ -45,11 +48,10 @@ main {
 }
 
 .right-bg {
-  top: 14%;
   position: absolute;
   height: 100%;
-  right: -150px;
-  bottom: 0;
+  right: -120px;
+  top: 15%;
   z-index: 0;
   width: 60%;
   background: var(--pale-violet-color);
@@ -141,10 +143,10 @@ main {
 
 .mobile-notch {
   position: absolute;
-  height: 10px;
+  height: 15px;
   background: white;
-  width: 80px;
-  top: 0;
+  width: 180px;
+  top: -1px;
   left: 0;
   right: 0;
   margin: auto;
@@ -310,4 +312,52 @@ p {
   line-height: 1.6rem;
   color: var(--dark-grayish-color);
   z-index: 1;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 800px) {
+  main {
+    flex-direction: column;
+    padding-bottom: 0px;
+  }
+
+  .split {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left-bg {
+    width: 100%;
+    left: -50%;
+    height: 80%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+  }
+
+  .right-bg {
+    width: 100%;
+    right: -50%;
+    height: 100%;
+    top: 0;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+  }
+
+  .mobile-dimension {
+    margin-left: 0;
+    -moz-box-shadow: 5px 10px 25px var(--grayish-blue-color);
+    -webkit-box-shadow: 5px 10px 25px var(--grayish-blue-color);
+    box-shadow: 5px 10px 25px var(--grayish-blue-color);
+  }
+
+  .center-align {
+    align-items: center;
+    padding: 60px 30px 30px 30px;
+  }
+
+  p {
+    text-align: center;
+  }
 }
